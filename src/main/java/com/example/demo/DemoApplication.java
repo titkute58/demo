@@ -13,4 +13,8 @@ public class DemoApplication {
 	public static void doNothing() {
 		System.out.println("hehe lmao");
 	}
+
+	public static void doNothing2() {
+		
+	}
 }
