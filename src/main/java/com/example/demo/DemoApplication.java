@@ -15,6 +15,6 @@ public class DemoApplication {
 	}
 
 	public static void doNothing2() {
-		
+
 	}
 }
