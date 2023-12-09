@@ -1,14 +1,29 @@
-name: Markdown Linting
+name: Proselint
 
 on:
+  push:
+    paths:
+      - '**/*.md'
   pull_request:
     paths:
-      - '**.md'
+      - '**/*.md'
 
 jobs:
   lint:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v3
-      - name: Run Proselint
-        uses: ./.github/actions/proselint-action
+      - name: Check out code
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+
+      - name: Install proselint
+        run: pip install proselint
+
+      - name: Lint all .md files
+        run: find . -name '*.md' -exec proselint {} \;
+
