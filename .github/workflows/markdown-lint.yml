@@ -1,4 +1,4 @@
-name: Proselint
+name: Proselint with Spell Check
 
 on:
   push:
@@ -24,6 +24,11 @@ jobs:
       - name: Install proselint
         run: pip install proselint
 
-      - name: Lint all .md files
+      - name: Lint all .md files with proselint
         run: find . -name '*.md' -exec proselint {} \;
+
+      - name: Check spelling with misspell
+        uses: reviewdog/action-misspell@v1
+        with:
+          locale: "US"
 
