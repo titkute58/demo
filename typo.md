@@ -1,3 +1,3 @@
 # Test Markdown
 
-This is a test file with a delibrate typo.
+This is a test file with a delibrat typo.
